@@ -36,17 +36,7 @@ export default function Task({ navigation, route }) {
     return(
         <View style={styles.container}>
             
-            <TouchableOpacity style={styles.buttonLogout}
-            onPress={() => {logout()}} >
-                <MaterialCommunityIcons 
-                
-                name="location-exit"
-                size={22}
-                color= "#f92e6a"
-                />
-                
-                
-            </TouchableOpacity>
+
             <FlatList 
             showsVerticalScrollIndicator={false}
             data={task}

@@ -1,20 +1,32 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons'
 import Task from './src/pages/Task';
 import Newtask from './src/pages/NewTask';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
 import NewUser from './src/pages/NewUser';
 
+import firebase from './src/config/firebase'
 
-import Icon from 'react-native-vector-icons/Feather';
+
 
 const Stack = createStackNavigator()
 
+
+
 export default function App() {
+  const database = firebase.firestore()
+
+  function logout() {
+    firebase.auth().signOut().then(() => {
+        navigation.navigate("Login")
+      }).catch((error) => {
+        
+      });
+  }
   
   return (
     <NavigationContainer>
@@ -36,14 +48,32 @@ export default function App() {
         <Stack.Screen
         name="Task"
         component={Task}
-        options={{
+        options={({ navigation, route }) => ({
           headerTintColor:"#f92e6a",
           headerLeft: null,
           
+          headerRight: () => (
+            
+            <TouchableOpacity style={styles.buttonLogout}
+            
+            onPress={() => navigation.navigate('Login')}  >
+                <Feather 
+                
+                name="log-out"
+                size={22}
+                color= "#f92e6a"
+                />
+                </TouchableOpacity>
+               
+          )
+
+          
+          
          
-        }}
+        })}
         
         
+      
       
         />
       
@@ -74,4 +104,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonLogout: {
+    position: 'relative',
+    right: 5,
+  }
 });

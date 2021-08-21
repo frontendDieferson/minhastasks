@@ -21,8 +21,8 @@ export default function Login({ navigation }) {
 
     _changeIcon = () => {
       icon !== 'eye-off'
-      ? (setIcon('eye-off'), setHidePassword(false))
-      : (setIcon('eye'), setHidePassword(true))
+      ? (setIcon('eye-off'), setHidePassword(true))
+      : (setIcon('eye'), setHidePassword(false))
     }
   
     
