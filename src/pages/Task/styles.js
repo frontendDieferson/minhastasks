@@ -47,11 +47,11 @@ const styles = StyleSheet.create({
         
     },
     buttonLogout: {
-    position: "absolute",
+    position: 'absolute',
     width: 60,
     height: 60,
     top: 5,
-    right: -30,
+    left: 340,
     
  
     

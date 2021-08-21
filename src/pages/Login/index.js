@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, Button, InputRightElement } from 'react-native';
 
 import firebase from '../../config/firebase';
 import styles from './styles';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { Platform } from 'react-native';
 
-
+import Icon from 'react-native-vector-icons/Feather';
 
 
 
@@ -14,6 +14,17 @@ export default function Login({ navigation }) {
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ errorLogin, setErrorLogin ] = useState("")
+
+   
+    const [icon, setIcon] = useState('eye-off')
+    const [hidePassword, setHidePassword] = useState(true)
+
+    _changeIcon = () => {
+      icon !== 'eye-off'
+      ? (setIcon('eye-off'), setHidePassword(false))
+      : (setIcon('eye'), setHidePassword(true))
+    }
+  
     
     const loginFirebase = () => {
         firebase.auth().signInWithEmailAndPassword(email, password)
@@ -61,14 +72,19 @@ export default function Login({ navigation }) {
 
         <TextInput 
                 style={styles.input}
-                secureTextEntry={true}
+                secureTextEntry={hidePassword}
                 placeholder="Sua Senha"
-                type="text"
                 onChangeText={(text)=> setPassword(text)}
                 value={password}
-        
-        
-        />
+                />   
+
+                <Icon 
+                style={styles.Icon}
+                name={icon} 
+                size={18} 
+                onPress={() => _changeIcon()} />
+
+
         {errorLogin === true
         ?
         <View style={styles.contentAlert}>

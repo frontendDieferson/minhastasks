@@ -67,7 +67,13 @@ const styles = StyleSheet.create({
     logoFooter: {
         width: 18,
         height: 22,
-    }
+    },
+    Icon: {
+        color: '#f92e6a',
+        position: "absolute",
+        left: 320,
+        
+    },
 
 
 })

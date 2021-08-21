@@ -1,17 +1,21 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
 import Task from './src/pages/Task';
 import Newtask from './src/pages/NewTask';
 import Details from './src/pages/Details';
 import Login from './src/pages/Login';
 import NewUser from './src/pages/NewUser';
 
+
+import Icon from 'react-native-vector-icons/Feather';
+
 const Stack = createStackNavigator()
 
 export default function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
@@ -30,17 +34,21 @@ export default function App() {
         }}
         />
         <Stack.Screen
-        
         name="Task"
         component={Task}
         options={{
           headerTintColor:"#f92e6a",
-          headerLeft: null
+          headerLeft: null,
+          
          
         }}
-       
+        
+        
+      
         />
-                <Stack.Screen 
+      
+
+        <Stack.Screen 
         name="New Task"
         component={Newtask}
         options={{
