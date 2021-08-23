@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Button, TouchableOpacity,  } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Feather, MaterialCommunityIcons } from '@expo/vector-icons'
+import {  MaterialCommunityIcons } from '@expo/vector-icons'
 import Task from './src/pages/Task';
 import Newtask from './src/pages/NewTask';
 import Details from './src/pages/Details';
@@ -13,20 +13,25 @@ import firebase from './src/config/firebase'
 
 
 
+
 const Stack = createStackNavigator()
 
 
 
-export default function App() {
-  const database = firebase.firestore()
-
-  function logout() {
-    firebase.auth().signOut().then(() => {
-        navigation.navigate("Login")
-      }).catch((error) => {
-        
-      });
-  }
+export default function App({ navigation }) {
+      
+  
+       function logout() {
+        firebase.auth().signOut().then(() => {
+            navigation.navigation("Login")
+          }).catch((error) => {
+            
+          });
+    }
+    
+ 
+   
+   
   
   return (
     <NavigationContainer>
@@ -45,36 +50,24 @@ export default function App() {
           headerShown: false,
         }}
         />
-        <Stack.Screen
+        <Stack.Screen 
         name="Task"
         component={Task}
-        options={({ navigation, route }) => ({
-          headerTintColor:"#f92e6a",
+        options={() =>({
+          headerShown: false,
+          headerTitle: 'Minhas Tarefas',
           headerLeft: null,
+          headerTintColor: '#f92e6a',
+       
           
-          headerRight: () => (
-            
-            <TouchableOpacity style={styles.buttonLogout}
-            
-            onPress={() => navigation.navigate('Login')}  >
-                <Feather 
-                
-                name="log-out"
-                size={22}
-                color= "#f92e6a"
-                />
-                </TouchableOpacity>
-               
-          )
-
           
           
          
+          
         })}
         
         
-      
-      
+
         />
       
 
@@ -82,14 +75,16 @@ export default function App() {
         name="New Task"
         component={Newtask}
         options={{
-          headerTintColor:"#f92e6a"
+          headerTintColor:"#f92e6a",
+          headerTitle: 'Adicionar Tarefa',
         }}
         />
                 <Stack.Screen 
         name="Details"
         component={Details}
         options={{
-          headerTintColor:"#f92e6a"
+          headerTintColor:"#f92e6a",
+          headerTitle: 'Editar Tarefa',
         }}
         />
       </Stack.Navigator>
@@ -106,6 +101,6 @@ const styles = StyleSheet.create({
   },
   buttonLogout: {
     position: 'relative',
-    right: 5,
+    right: 10,
   }
 });

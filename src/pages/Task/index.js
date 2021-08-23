@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { SafeAreaView, View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 
 
 import firebase from '../../config/firebase'
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
 import styles from './styles'
+
 
 export default function Task({ navigation, route }) {
     const [ task, setTask ] = useState([])
@@ -18,6 +19,8 @@ export default function Task({ navigation, route }) {
             
           });
     }
+
+    
 
     function deleteTask(id) {
         database.collection(route.params.idUser).doc(id).delete()
@@ -35,8 +38,20 @@ export default function Task({ navigation, route }) {
 
     return(
         <View style={styles.container}>
-            
+            <Text style={styles.headerTitle}>Minhas Tarefas</Text>
+          
+            <TouchableOpacity style={styles.buttonLogout}
+            onPress={() => {logout()}} >
+                <MaterialCommunityIcons 
 
+                name="logout"
+                size={30}
+                color= "#f92e6a"
+                />
+                
+                
+            </TouchableOpacity>
+        
             <FlatList 
             showsVerticalScrollIndicator={false}
             data={task}
@@ -53,7 +68,7 @@ export default function Task({ navigation, route }) {
             name="trash-o"
             size={23}
             color="#f92e6a"
-            style={{padding: 8}}
+            style={{padding: 5}}
             
             >
                 

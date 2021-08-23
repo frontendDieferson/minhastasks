@@ -4,7 +4,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor:"#fff",
-        paddingTop: 20,
+        paddingTop: 40,
+    },
+    headerTitle: {
+        color:'#f92e6a',
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginLeft: 5,
+        marginBottom: 10,
     },
     Tasks: {
         width: "100%",
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 60,
     height: 60,
-    top: 5,
+    top: 40,
     left: 340,
     
  
