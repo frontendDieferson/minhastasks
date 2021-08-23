@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 
 
 import firebase from '../../config/firebase'
-import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
+import { FontAwesome, MaterialCommunityIcons, Feather } from '@expo/vector-icons'
 import styles from './styles'
 
 
@@ -46,7 +46,7 @@ export default function Task({ navigation, route }) {
 
                 name="logout"
                 size={30}
-                color= "#f92e6a"
+                color= "#E63946"
                 />
                 
                 
@@ -64,19 +64,30 @@ export default function Task({ navigation, route }) {
             }}
             
             >
-            <FontAwesome 
-            name="trash-o"
+            <Feather 
+            name="trash-2"
             size={23}
-            color="#f92e6a"
+            color="#E63946"
             style={{padding: 5}}
             
             >
                 
-            </FontAwesome>
+            </Feather>
                
             </TouchableOpacity>
+            
             <Text 
             style={styles.DescriptionTask}
+            
+            
+            
+            > 
+            
+            {item.description} 
+            
+            </Text>
+            <TouchableOpacity 
+            style={styles.editTasks}
             onPress={() =>{
                 navigation.navigate("Details", {
                     id: item.id,
@@ -84,9 +95,17 @@ export default function Task({ navigation, route }) {
                     idUser: route.params.idUser
                 })
             }}
-            > 
-            {item.description} 
-            </Text>
+            
+            >
+
+            <Feather 
+            name='edit'
+            size={23}
+            color="#1ABC9C"
+            >
+            </Feather>
+            </TouchableOpacity>
+            
         </View>
                 )
         }}

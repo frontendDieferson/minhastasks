@@ -75,7 +75,10 @@ export default function App({ navigation }) {
         name="New Task"
         component={Newtask}
         options={{
-          headerTintColor:"#f92e6a",
+          headerTintColor:"#ECF0F1",
+          headerStyle:{
+            backgroundColor: '#34495E',
+          },
           headerTitle: 'Adicionar Tarefa',
         }}
         />
@@ -83,7 +86,10 @@ export default function App({ navigation }) {
         name="Details"
         component={Details}
         options={{
-          headerTintColor:"#f92e6a",
+          headerStyle: {
+            backgroundColor: '#34495E',
+          },
+          headerTintColor:"#ECF0F1",
           headerTitle: 'Editar Tarefa',
         }}
         />

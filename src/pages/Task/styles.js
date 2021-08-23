@@ -3,15 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:"#fff",
+        backgroundColor:"#34495E",
         paddingTop: 40,
     },
     headerTitle: {
-        color:'#f92e6a',
-        fontSize: 22,
+        color:'#ECF0F1',
+        fontSize: 20,
         fontWeight: 'bold',
         marginLeft: 5,
         marginBottom: 10,
+
     },
     Tasks: {
         width: "100%",
@@ -25,15 +26,22 @@ const styles = StyleSheet.create({
     },
 
     DescriptionTask: {
-        width: "75%",
+        width: "80%",
         alignContent:'flex-start',
-        backgroundColor: '#f5f5f5cf',
-        padding: 12,
-        paddingHorizontal: 20,
-        borderRadius: 50,
+        backgroundColor: '#1ABC9C',
+        padding: 10,
+        paddingHorizontal: 10,
+        borderRadius: 10,
         marginBottom: 5,
         marginRight: 15,
-        color: "#282b2db5",
+        color: "#ECF0F1",
+    },
+    editTasks: {
+        position: 'absolute',
+        justifyContent: 'center',
+        alignItems:'center',
+        left: 35,
+        bottom: 15,
     },
 
     buttonNewTask: {
@@ -42,7 +50,7 @@ const styles = StyleSheet.create({
     height: 60,
     bottom: 30,
     left: 20,
-    backgroundColor: "#f92e6a",
+    backgroundColor: "#1ABC9C",
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,7 +65,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 60,
     height: 60,
-    top: 40,
+    top: 36,
     left: 340,
     
  

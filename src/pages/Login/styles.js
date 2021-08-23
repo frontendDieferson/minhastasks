@@ -3,7 +3,7 @@ import { Platform, StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#34495E",
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: Platform.OS === "ios" ? 0 : 50,
@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 10,
         borderBottomWidth: 1,
-        borderBottomColor: "#f92e6a",
+        borderBottomColor: "#2C3E50",
         marginLeft: 'auto',
         marginRight: 'auto',
-        color: '#4d5156',
+        color: '#ECF0F1',
 
     },
     buttonLogin: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#f92e6a",
+        backgroundColor: "#1ABC9C",
         borderRadius: 50,
         marginTop: 30,
         
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     registration: {
         marginTop: 20,
-        color: "#4D5156",
+        color: "#ECF0F1",
         
     },
     linkSubscribe: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         height: 22,
     },
     Icon: {
-        color: '#f92e6a',
+        color: '#ECF0F1',
         position: "absolute",
         left: 320,
         
