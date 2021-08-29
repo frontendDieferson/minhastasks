@@ -114,7 +114,7 @@ export default function Task({ navigation, route }) {
             />
             <TouchableOpacity style={styles.buttonNewTask}
             onPress={() => navigation.navigate("New Task", { idUser: route.params.idUser })}>
-                <Text style={styles.iconButton}>+</Text>
+                <Text style={styles.iconButton}>+  Nova</Text>
             </TouchableOpacity>
         </View>
     )

@@ -45,20 +45,20 @@ const styles = StyleSheet.create({
     },
 
     buttonNewTask: {
-    position: "absolute",
-    width: 60,
-    height: 60,
+    
+    width: 150,
+    height: 50,
     bottom: 30,
-    left: 20,
+    left: 120,
     backgroundColor: "#1ABC9C",
-    borderRadius: 50,
+    borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     },
 
     iconButton: {
         color: "#FFFFFF",
-        fontSize: 22,
+        fontSize: 18,
         
     },
     buttonLogout: {
